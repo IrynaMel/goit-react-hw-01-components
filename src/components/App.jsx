@@ -5,14 +5,16 @@ import data from './data/data';
 import Statistic from './Statistic/Statistic'; 
 
 import friends from './data/friends';
-import Friends from './Friends/Friends';
+import Friends from './Friends/FriendsList';
 
 import transactions from './data/transactions';
-import TransactionHistory  from './Transistation/TransactionHistory ';
+import TransactionHistory  from './Transaction/TransactionHistory';
+
+import Container from './Container/Container'
 
 export const App = () => {
   return (
-    <div>
+    <Container>
      <Profile
      avatar={user.avatar}
      username={user.username}
@@ -24,8 +26,8 @@ export const App = () => {
      />
      <Statistic data = {data}/>
      <Friends friends ={friends}/>
-     <TransactionHistory  transaction ={transactions} />
-    </div>
+     <TransactionHistory  items ={transactions} />
+     </Container>
 
     
   
