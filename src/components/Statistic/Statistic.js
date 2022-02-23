@@ -6,13 +6,13 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }; 
 
-const Statistic = ({data}) =>{
+const Statistic = ({title, data}) =>{
   return(
   <section className={s.statistic}>
-  <h2 className={s.title}>Upload stats</h2>
+  {title && <h2 className={s.title}>{title}</h2>}
 
   <ul className={s.statlist}>
-   { data.map(({id, label, percentage})=> (
+   {data.map(({id, label, percentage})=> (
          <li key = {id} 
          style={{
           backgroundColor: getRandomHexColor(),
@@ -28,6 +28,7 @@ const Statistic = ({data}) =>{
 };
 
 Statistic.propTypes = {
+  title: PropTypes.string,
   data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,

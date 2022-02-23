@@ -20,11 +20,10 @@ export const App = () => {
      username={user.username}
      tag={user.tag}
      location={user.location}
-     followers={user.stats.followers}
-     views={user.stats.views}
-     likes={user.stats.likes}
+     stats={user.stats}
      />
-     <Statistic data = {data}/>
+     <Statistic title="Upload stats" data={data} />
+     <Statistic data={data} />
      <Friends friends ={friends}/>
      <TransactionHistory  items ={transactions} />
      </Container>
@@ -33,3 +32,4 @@ export const App = () => {
   
   );
 };
+
